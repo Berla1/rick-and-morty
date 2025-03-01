@@ -11,9 +11,9 @@ const Home = () => {
           className="w-1/2"
         />
         <ul className="flex gap-6 text-xl">
-          <HomeBtn caminho="/" texto="Characters"/>
-          <HomeBtn caminho="/" texto="Locations"/>
-          <HomeBtn caminho="/" texto="Episodes"/>
+          <HomeBtn caminho="/characters" texto="Characters"/>
+          <HomeBtn caminho="/locations" texto="Locations"/>
+          <HomeBtn caminho="/episodes" texto="Episodes"/>
         </ul>
       </main>
     </>
