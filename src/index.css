@@ -6,15 +6,3 @@
     font-family: "Roboto Mono", serif;
 }
 
-.home-btns{
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    transition: 0.2s;
-    border: 1px solid white;
-}
-
-.home-btns:hover{
-    transform: scale(1.05);
-
-}

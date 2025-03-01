@@ -1,4 +1,5 @@
 import RickAndMortyLogo from "../../assets/rick-morty-logo.svg";
+import HomeBtn from "../../components/HomeBtn";
 
 const Home = () => {
   return (
@@ -10,15 +11,9 @@ const Home = () => {
           className="w-1/2"
         />
         <ul className="flex gap-6 text-xl">
-          <a href="" target="_blank">
-            <button className="home-btns">Characters</button>
-          </a>
-          <a href="" target="_blank">
-            <button className="home-btns">Locations</button>
-          </a>
-          <a href="" target="_blank">
-            <button className="home-btns">Episodes</button>
-          </a>
+          <HomeBtn caminho="/" texto="Characters"/>
+          <HomeBtn caminho="/" texto="Locations"/>
+          <HomeBtn caminho="/" texto="Episodes"/>
         </ul>
       </main>
     </>
