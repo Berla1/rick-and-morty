@@ -1,17 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const Character = () => {
+interface CharacterType {
+  id: number;
+  name: string;
+  image: string;
+}
 
-  const [characters, setCharacters] = useState([]);
-  
+const Character = () => {
+  const [characters, setCharacters] = useState<CharacterType[]>([]);  
+
   const getData = async () => {
     const url = "https://rickandmortyapi.com/api/character/?page=1";
-      const response = await axios.get(url);
-      const content = response.data.results;
-      console.log(content);
-      setCharacters(content);
-  }
+    const response = await axios.get(url);
+    const content: CharacterType[] = response.data.results;  
+    console.log(content);
+    setCharacters(content);
+  };
 
   useEffect(() => {
     getData();
@@ -19,8 +24,8 @@ const Character = () => {
 
   return (
     <>
-       <h1 className="text-2xl p-4">Characters in Rick And Morty</h1>
-      <ul className="flex flex-wrap gap-10 ">
+      <h1 className="text-2xl p-4">Characters in Rick And Morty</h1>
+      <ul className="flex flex-wrap gap-10">
         {characters.map((character) => (
           <li key={character.id} className="flex flex-col items-center justify-center">
             <p>{character.name}</p>
