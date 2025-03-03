@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { PiDotOutlineFill } from "react-icons/pi";
+import CardCharacter from "../../components/CardCharacter";
 import Header from "../../components/Header";
+import axios from "axios";
 
 interface CharacterType {
   id: number;
@@ -12,14 +12,14 @@ interface CharacterType {
   gender: string;
   origin: {
     name: string;
-  }
+  };
 }
 
 const Character = () => {
   const [characters, setCharacters] = useState<CharacterType[]>([]);
 
   const getData = async () => {
-    const url = "https://rickandmortyapi.com/api/character/?page=1";
+    const url = "https://rickandmortyapi.com/api/character/";
     const response = await axios.get(url);
     const content: CharacterType[] = response.data.results;
     console.log(content);
@@ -29,40 +29,19 @@ const Character = () => {
   useEffect(() => {
     getData();
   }, []);
-
   return (
     <>
-      <Header titulo="Characters in Rick and Morty"/>
+      <Header titulo="Characters in Rick and Morty" />
       <ul className="flex flex-wrap gap-10 p-2 justify-evenly">
         {characters.map((character) => (
           <li key={character.id}>
-            <div className="flex bg-[#333] rounded-xl w-150">
-              <img
-                src={character.image}
-                alt={character.name}
-                className="w-1/2 h-full rounded-l-xl"
-              />
-              <div className="px-4">
-                <h2 className="text-2xl pt-4">{character.name}</h2>
-                <p className="flex items-center ">
-                  <PiDotOutlineFill
-                    size={25}
-                    fill={
-                      character.status === "Alive"
-                        ? "green"
-                        : character.status === "Dead"
-                        ? "red"
-                        : "orange"
-                    }
-                  />
-                  {character.status}
-                </p>
-                <div className="mt-6">
-                  <p>Specie: {character.species}</p>
-                  <p>Gender: {character.gender}</p>
-                </div>
-              </div>
-            </div>
+            <CardCharacter 
+            image={character.image} 
+            name={character.name} 
+            status={character.status}
+            species={character.species}
+            gender={character.gender}
+            origin={character.origin}/>
           </li>
         ))}
       </ul>
