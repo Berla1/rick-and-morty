@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { PiDotOutlineFill } from "react-icons/pi";
+import Header from "../../components/Header";
 
 interface CharacterType {
   id: number;
@@ -28,7 +29,7 @@ const Character = () => {
 
   return (
     <>
-      <h1 className="text-2xl px-4 py-8">Characters in Rick And Morty</h1>
+      <Header titulo="Characters in Rick and Morty"/>
       <ul className="flex flex-wrap gap-10 p-2 justify-evenly">
         {characters.map((character) => (
           <li key={character.id}>
