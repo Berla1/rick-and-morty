@@ -20,12 +20,11 @@ const CardCharacter: React.FC<CardCharacterProps> = ({
   origin,
 }) => {
   return (
-    <>
-      <div className="flex flex-col bg-[#333] rounded-xl items-center md:flex-row md:w-150">
-        <img src={image} alt={name} className="w-1/2 h-full rounded-l-xl" />
-        <div className="px-4">
-          <h2 className="text-2xl pt-4">{name}</h2>
-          <p className="flex items-center ">
+      <div className="flex flex-col bg-[#333] rounded-xl justify-center items-center w-full md:flex-row md:w-150 md:justify-normal">
+        <img src={image} alt={name} className="w- h-full rounded-b-xl md:rounded-l-xl" />
+        <div className="flex flex-col items-center px-4">
+          <h2 className="text-2xl pt-4 text-center">{name}</h2>
+          <p className="flex items-center md:items-start">
             <PiDotOutlineFill
               size={25}
               fill={
@@ -38,14 +37,13 @@ const CardCharacter: React.FC<CardCharacterProps> = ({
             />
             {status}
           </p>
-          <div className="flex flex-col gap-2 my-6">
+          <div className="flex flex-col gap-2 my-6 items-center w-full md:items-start">
             <p>Specie: {species}</p>
             <p>Gender: {gender}</p>
-            <p>Origin: {origin.name}</p>
+            <p className="text-center w-full md:text-start">Origin: {origin.name}</p>
           </div>
         </div>
       </div>
-    </>
   );
 };
 
