@@ -21,7 +21,7 @@ const CardCharacter: React.FC<CardCharacterProps> = ({
 }) => {
   return (
     <>
-      <div className="flex bg-[#333] rounded-xl w-150">
+      <div className="flex flex-col bg-[#333] rounded-xl items-center md:flex-row md:w-150">
         <img src={image} alt={name} className="w-1/2 h-full rounded-l-xl" />
         <div className="px-4">
           <h2 className="text-2xl pt-4">{name}</h2>
@@ -38,7 +38,7 @@ const CardCharacter: React.FC<CardCharacterProps> = ({
             />
             {status}
           </p>
-          <div className="flex flex-col gap-2 mt-6">
+          <div className="flex flex-col gap-2 my-6">
             <p>Specie: {species}</p>
             <p>Gender: {gender}</p>
             <p>Origin: {origin.name}</p>

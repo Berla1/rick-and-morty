@@ -8,9 +8,9 @@ const Home = () => {
         <img
           src={RickAndMortyLogo}
           alt="Logo rick and morty"
-          className="w-1/2"
+          className="md:w-1/2"
         />
-        <ul className="flex gap-6 text-xl">
+        <ul className="flex flex-col items-center gap-6 text-xl md:flex-row">
           <HomeBtn caminho="/characters" texto="Characters"/>
           <HomeBtn caminho="/locations" texto="Locations"/>
           <HomeBtn caminho="/episodes" texto="Episodes"/>
