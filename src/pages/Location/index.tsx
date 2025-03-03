@@ -1,7 +1,9 @@
+import Header from "../../components/Header";
+
 const Location = () => {
     return ( 
     <>
-    <h1>Location</h1>
+        <Header titulo="Locations in Rick and Morty"/>
     </>
 );
 }

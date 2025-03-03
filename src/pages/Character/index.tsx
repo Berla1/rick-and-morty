@@ -10,6 +10,9 @@ interface CharacterType {
   status: string;
   species: string;
   gender: string;
+  origin: {
+    name: string;
+  }
 }
 
 const Character = () => {

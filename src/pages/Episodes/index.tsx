@@ -1,6 +1,10 @@
+import Header from "../../components/Header";
+
 const Episodes = () => {
     return (  
-        <><h1>Episodes</h1></>
+       <>
+       <Header titulo="Episodes in Rick and Morty"/>
+       </>
     );
 }
  

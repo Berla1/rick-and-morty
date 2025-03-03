@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ titulo }) => {
           </div>
           <div className="flex gap-4">
             <LinkHeader to="/" texto="Home" />
-            <LinkHeader to="/charcters" texto="Charcters" />
+            <LinkHeader to="/characters" texto="Charcters" />
             <LinkHeader to="/locations" texto="Locations" />
             <LinkHeader to="/episodes" texto="Episodes" />
           </div>
