@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CardEpisodes from "../../components/CardEpisodes";
 import Header from "../../components/Header";
 import axios from "axios";
+import Pagination from "../../components/Pagination";
 
 interface EpisodeType {
     id: number;
@@ -13,17 +14,19 @@ interface EpisodeType {
 const Episodes = () => {
     const [episode, setEpisode] = useState<EpisodeType[]>([]);
     const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
 
     const getData = async () => {
         const url = `https://rickandmortyapi.com/api/episode/?page=${page}`;
         const response = await axios.get(url);
         const content: EpisodeType[] = response.data.results;
         setEpisode(content);
+        setTotalPages(response.data.info.pages);
       };
 
       useEffect(() => {
         getData();
-      }, []);
+      }, [page]);
     
   return (
     <>
@@ -38,8 +41,12 @@ const Episodes = () => {
             />
           </li>
         ))}
-
       </ul>
+      <Pagination
+        currentPage={page}
+        totalPages={totalPages}
+        onPageChange={setPage}
+      />
     </>
   );
 };
