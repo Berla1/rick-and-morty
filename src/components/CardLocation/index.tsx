@@ -12,7 +12,6 @@ const CardLocation: React.FC<CardLocationProps> = ({
   dimension,
 }) => {
   return (
-
       <li>
         <div className="flex flex-col bg-[#333] items-center text-center rounded-xl p-4 w-screen md:w-80 h-60">
           <h2 className="font-bold text-2xl mb-5">{name}</h2>
